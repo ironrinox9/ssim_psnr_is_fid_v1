@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
     dataset = dset.ImageFolder(root=args.source,
                              transform=transforms.Compose([
-                                 transforms.Scale(256),
+                                 transforms.Resize(256),
                                  transforms.ToTensor(),
                                  transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
                              ])

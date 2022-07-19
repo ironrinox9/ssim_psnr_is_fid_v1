@@ -13,9 +13,8 @@ import numpy as np
 import argparse
 from scipy.stats import entropy
 
-def inception_score(imgs, cuda=True, batch_size=32, resize=False, splits=1):
+def inception_score(imgs, cuda=True, batch_size=8, resize=False, splits=1):
     """Computes the inception score of the generated images imgs
-
     imgs -- Torch dataset of (3xHxW) numpy images normalized in the range [-1, 1]
     cuda -- whether or not to run on GPU
     batch_size -- batch size for feeding into Inception v3
@@ -93,4 +92,4 @@ if __name__ == '__main__':
 
 
     print ("Calculating Inception Score...")
-    print (inception_score(dataset, cuda=True, batch_size=32, resize=True, splits=10))
+    print (inception_score(dataset, cuda=True, batch_size=8, resize=True, splits=10))
